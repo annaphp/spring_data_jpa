@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages={"repo"})
+@ComponentScan(basePackages={"service"})
 @EnableJpaRepositories(basePackages="repo")
 public class Config {
 	
