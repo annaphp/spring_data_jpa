@@ -48,13 +48,20 @@ public class MessageService {
 	//outer fails because of the thrown exception
 	@Transactional
      public Message save2(Message m){
-		
-		
 		service2.saveInNewTransaction(new Message("Pupla"), DONT_THROW_X);
-		
 		
 		Message saved = repo.save(m);
 	    throw new RuntimeException();
+	}
+	
+	//outer and inner succeed 
+	//because no exception is thrown
+	@Transactional
+	public Message save3(Message m){
+	    service2.saveInNewTransaction(new Message("Pupla"), DONT_THROW_X);	
+		Message saved = repo.save(m);
+		return saved;
+	 
 	}
 
 }

@@ -14,7 +14,7 @@ public class Main {
 		
 		MessageService service= context.getBean("messageService", MessageService.class);
 		
-	    service.save2(new Message("Hello buddha"));
+	    service.save3(new Message("Hello buddha"));
 	   
 	    
 	    
